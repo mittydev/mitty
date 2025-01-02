@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+
+# Python virtual environment
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+.cursorignore
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Include backend in functions if necessary
+!backend/
