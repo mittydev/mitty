@@ -73,16 +73,6 @@ dspy.configure(lm=gpt4o_mini)
 # Data Models
 # ============================================================================
 
-
-class Author(BaseModel):
-    name: str
-
-
-class EvidencePoint(BaseModel):
-    title: str
-    evidence: str
-
-
 class Paper(BaseModel):
     title: str
     link: str
@@ -109,17 +99,23 @@ class Paper(BaseModel):
     opposing_evidence: Optional[List[EvidencePoint]] = None
     key_findings: Optional[str] = None
 
+class Author(BaseModel):
+    name: str
+
+
+class EvidencePoint(BaseModel):
+    title: str
+    evidence: str
+
+# ============================================================================
+# State Management
+# ============================================================================
 
 class Task(BaseModel):
     state: str
     input_data: dict
     task_description: str
     research_papers: List[Paper] = []
-
-
-# ============================================================================
-# State Management
-# ============================================================================
 
 state_transitions = {
     "Start": "Clarify",
@@ -153,6 +149,10 @@ state_substeps = {
 # ============================================================================
 # DSPy Signatures
 # ============================================================================
+# ============================================================================
+# State Management
+# ============================================================================
+
 
 
 class ClarifyQuestions(dspy.Signature):
