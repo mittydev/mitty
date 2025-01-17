@@ -8,13 +8,45 @@
     "css": "styles/globals.css",
     "baseColor": "slate",
     "cssVariables": true,
-    "prefix": ""
+    "prefix": "",
+    "plugins": ["@tailwindcss/forms", "@tailwindcss/typography"],
+    "content": ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"]
   },
   "aliases": {
     "components": "@/components",
     "utils": "@/lib/utils",
     "ui": "@/components/ui",
     "lib": "@/lib",
-    "hooks": "@/hooks"
+    "hooks": "@/hooks",
+    "styles": "@/styles",
+    "config": "@/config"
+  },
+  "eslint": {
+    "config": ".eslintrc.json",
+    "ignore": ".eslintignore"
+  },
+  "prettier": {
+    "config": ".prettierrc",
+    "ignore": ".prettierignore"
+  },
+  "testing": {
+    "jest": {
+      "config": "jest.config.js",
+      "setupFiles": ["<rootDir>/jest.setup.js"]
+    }
+  },
+  "localization": {
+    "defaultLocale": "en",
+    "locales": ["en", "es", "fr", "de"],
+    "messagesPath": "public/locales"
+  },
+  "env": {
+    "NODE_ENV": "development",
+    "NEXT_PUBLIC_API_URL": "https://api.example.com",
+    "NEXT_PUBLIC_FEATURE_FLAG": "true"
+  },
+  "build": {
+    "outputDir": "dist",
+    "sourceMaps": true
   }
 }
